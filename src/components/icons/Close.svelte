@@ -1,6 +1,6 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  class="icon icon-tabler icon-tabler-x"
+  class="icon"
   width="25"
   height="25"
   viewBox="0 0 24 24"
@@ -14,9 +14,3 @@
   <path d="M18 6l-12 12" />
   <path d="M6 6l12 12" />
 </svg>
-
-<style>
-  svg {
-    display: flex;
-  }
-</style>

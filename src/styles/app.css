@@ -17,3 +17,8 @@ html {
   place-items: center;
   min-height: 100vh;
 }
+
+.icon {
+  display: flex;
+  border: 1px solid red;
+}
