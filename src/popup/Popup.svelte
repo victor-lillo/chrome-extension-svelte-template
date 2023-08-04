@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from '../components/Button.svelte'
+  import { MESSAGE_OBJECT } from '../constants'
 
   export let prop: string
 
@@ -9,10 +10,8 @@
 
   const sendMessage = async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true })
-    console.log(tab)
-    const response = await chrome.tabs.sendMessage(tab.id, { greeting: 'hello' })
-    // do something with response here
-    console.log(response)
+    const response = await chrome.tabs.sendMessage(tab.id, { [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
+    console.log('The response is:', response)
   }
 </script>
 

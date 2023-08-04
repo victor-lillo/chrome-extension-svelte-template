@@ -1,14 +1,21 @@
+import { MESSAGE_OBJECT } from './../constants'
 // Some global styles on the page
 // import './styles.css'
 
 // Some JS on the page
 // storage.get().then(console.log)
-console.log('Some comment on the page 😎')
+console.log('Some comment in the page 😎')
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log(sender.tab ? 'from a content script:' + sender.tab.url : 'from the extension')
+  const isFromContentScript = Boolean(sender.tab)
 
-  if (request.greeting == 'hello') {
+  console.log(
+    isFromContentScript
+      ? 'Received message from a content script:' + sender.tab.url
+      : 'Received message from the extension'
+  )
+
+  if (request[MESSAGE_OBJECT.key] === MESSAGE_OBJECT.value) {
     sendResponse({ farewell: 'goodbye' })
   }
 })
