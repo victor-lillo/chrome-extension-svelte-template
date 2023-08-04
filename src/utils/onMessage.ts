@@ -1,4 +1,4 @@
-import { RESPONSE_OK } from './../constants'
+import { RESPONSE_OK } from '../constants'
 
 export default function onMessage() {
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {

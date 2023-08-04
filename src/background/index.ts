@@ -1,10 +1,15 @@
-import onInstall from './onInstall'
-import onMessage from './onMessage'
-import onStorageChanged from './onStorageChanged'
+import onInstall from '../utils/onInstall'
+import onMessage from '../utils/onMessage'
+import onStorageChanged from '../utils/onStorageChanged'
 
 console.log('Service worker started.')
 
-onInstall()
+const onInstallCallback = async () => {
+  // await saveInitialDate()
+  console.log('Installed ✅')
+}
+
+onInstall(onInstallCallback)
 onMessage()
 onStorageChanged()
 

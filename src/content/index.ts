@@ -1,4 +1,4 @@
-import onMessage from '../background/onMessage'
+import onMessage from '../utils/onMessage'
 
 // Some global styles on the page
 // import './styles.css'
