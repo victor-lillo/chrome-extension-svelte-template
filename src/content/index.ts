@@ -1,5 +1,5 @@
 import onMessage from '../background/onMessage'
-import { MESSAGE_OBJECT } from './../constants'
+
 // Some global styles on the page
 // import './styles.css'
 
