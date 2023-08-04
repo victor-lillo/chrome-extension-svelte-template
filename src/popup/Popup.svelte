@@ -11,12 +11,12 @@
 
   const messageToBackground = async () => {
     const response = await sendMessageToBackground({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
-    console.log('Response from background:', response)
+    console.log('POPUP: Response from background:', response)
   }
 
   const messageToContent = async () => {
     const response = await sendMessageToContent({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
-    console.log('Response from content:', response)
+    console.log('POPUP: Response from content:', response)
   }
 </script>
 
