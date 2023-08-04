@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from '../components/Button.svelte'
   import { MESSAGE_OBJECT } from '../constants'
+  import { sendMessageToBackground, sendMessageToContent } from '../utils/sendMessage'
 
   export let prop: string
 
@@ -8,16 +9,21 @@
     chrome.runtime.openOptionsPage()
   }
 
-  const sendMessage = async () => {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true })
-    const response = await chrome.tabs.sendMessage(tab.id, { [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
-    console.log('The response is:', response)
+  const messageToBackground = async () => {
+    const response = await sendMessageToBackground({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
+    console.log('Response from background:', response)
+  }
+
+  const messageToContent = async () => {
+    const response = await sendMessageToContent({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
+    console.log('Response from content:', response)
   }
 </script>
 
 <section>
   Popup {prop}
-  <Button handleClick={sendMessage} variant="alert">Send message</Button>
+  <Button handleClick={messageToBackground} variant="alert">Send message to Background</Button>
+  <Button handleClick={messageToContent} variant="alert">Send message to Content</Button>
   <Button handleClick={openOptionsPage}>Open options</Button>
 </section>
 
