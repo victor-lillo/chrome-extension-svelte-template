@@ -4,9 +4,8 @@ import onStorageChanged from '../utils/onStorageChanged'
 
 console.log('Service worker started.')
 
-const onInstallCallback = async () => {
-  // await saveInitialDate()
-  console.log('Installed ✅')
+const onInstallCallback = async (details: chrome.runtime.InstalledDetails) => {
+  console.log('Installed ✅', details)
 }
 
 onInstall(onInstallCallback)
