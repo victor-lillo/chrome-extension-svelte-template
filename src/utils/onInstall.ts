@@ -1,6 +1,8 @@
-type onInstallCallback = (details: chrome.runtime.InstalledDetails) => void
+const onInstallCallback = async (details: chrome.runtime.InstalledDetails) => {
+  console.log('Installed ✅', details)
+}
 
-export default function onInstall(onInstallCallback: onInstallCallback) {
+export default function onInstall() {
   chrome.runtime.onInstalled.addListener((details) => {
     onInstallCallback(details)
   })
