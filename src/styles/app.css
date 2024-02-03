@@ -1,4 +1,5 @@
 @import url(reset.css);
+
 @import url(tokens.css);
 
 html {
@@ -20,4 +21,10 @@ html {
 
 .icon {
   display: flex;
+}
+
+code {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-1);
+  background-color: var(--color-dark-4);
 }
