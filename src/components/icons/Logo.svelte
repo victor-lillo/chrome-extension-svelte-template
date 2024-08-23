@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let animation: boolean = false
+  export let animation = false
   export let size: 1 | 2 = 1
 </script>
 
