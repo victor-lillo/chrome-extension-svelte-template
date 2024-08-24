@@ -1,23 +1,23 @@
 <script lang="ts">
-  import Button from '../components/Button.svelte'
-  import { MESSAGE_OBJECT } from '../constants'
-  import { sendMessageToBackground, sendMessageToContent } from '../utils/sendMessage'
+  import Button from '../components/Button.svelte';
+  import { MESSAGE_OBJECT } from '../constants';
+  import { sendMessageToBackground, sendMessageToContent } from '../utils/sendMessage';
 
-  export let prop: string
+  export let prop: string;
 
   const openOptionsPage = () => {
-    chrome.runtime.openOptionsPage()
-  }
+    chrome.runtime.openOptionsPage();
+  };
 
   const messageToBackground = async () => {
-    const response = await sendMessageToBackground({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
-    console.log('POPUP: Response from background:', response)
-  }
+    const response = await sendMessageToBackground({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value });
+    console.log('POPUP: Response from background:', response);
+  };
 
   const messageToContent = async () => {
-    const response = await sendMessageToContent({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value })
-    console.log('POPUP: Response from content:', response)
-  }
+    const response = await sendMessageToContent({ [MESSAGE_OBJECT.key]: MESSAGE_OBJECT.value });
+    console.log('POPUP: Response from content:', response);
+  };
 </script>
 
 <section>

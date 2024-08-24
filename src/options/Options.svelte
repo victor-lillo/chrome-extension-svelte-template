@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let prop: string
+  export let prop: string;
 </script>
 
 <section>
