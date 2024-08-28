@@ -1,0 +1,16 @@
+# .github/release.yml
+
+changelog:
+  categories:
+    - title: ⚛️ Chore
+      labels:
+        - chore
+    - title: 👒 Dependencies
+      labels:
+        - dependencies
+    - title: 🏕 Features
+      labels:
+        - enhancement
+    - title: Other Changes
+      labels:
+        - '*'
